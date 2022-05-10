@@ -1,20 +1,22 @@
-#timer {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 8em;
-  letter-spacing: 5px;
-  text-align: center;
+
+.container{
+  height: 300px;
+  width: 100%;
 }
 
-#contols {
-  text-align: center;
+body {
+  background-color: lavender;
 }
 
-button {
-  background: lavender;
-  border: 2px solid purple;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 20px;
+#display{
+  width: 100%;
+  font-size: 72px;
+  color: purple;
+  text-align: center;
+  margin: 0px auto;
+}
+
+.buttons{
+  text-align: center;
+
 }
