@@ -8,19 +8,35 @@
 		<title>Stopwatch</title>
 		<link rel="stylesheet" href="css/styles.css">
 		<script src="js/main.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 	</head>
 
 	<body>
+		<h1>Simple Stopwatch</h1>
+
 
 		<div class="container">
+			<main>
+				<sectiom>
+
+
 			<div id="display">
-				00:00:00
+				00:00:00.0
 			</div>
+		</section>
+
+
 
 			<div class="buttons">
-				<button id="startStop" onclick="startStop()">Start</button><button id="reset" onclick="reset()">Reset</button>
+				<button id="startStop" onclick="startStop()">Start</button><button id="reset" onclick="reset()">Reset</button><button id="lap" onclick="lap()">Lap</button>
 			</div>
 		</div>
+
+		<h2>Laps:</h2>
+		<div id="laps">
+			<p id="lapRecord"></p>
+		</div>
+	</main>
 
 
 	</body>

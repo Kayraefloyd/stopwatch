@@ -1,8 +1,10 @@
 // define vars for time values
+var miliseconds = 0;
 var seconds = 0;
 var minutes = 0;
 var hours = 0;
 
+var displayMiliseconds = 0;
 var displaySeconds = 0;
 var displayMinutes= 0;
 var displayHours = 0;
@@ -13,19 +15,32 @@ var interval = null;
 // create var for stopwatch status
 var status = 'stopped';
 
+
 //Stopwatch function
 function stopWatch() {
 
-  seconds++;
+  miliseconds+=10;
 
-  if (seconds / 60 === 1) {
+  if(miliseconds >= 1000) {
+    miliseconds = 0;
+    seconds++;
+  }
+
+  if (seconds >= 60) {
     seconds = 0;
     minutes++;
 
-    if (minutes / 60 === 1) {
+    if (minutes >= 60) {
       minutes = 0;
       hours++;
     }
+  }
+
+  if(miliseconds < 100) {
+    displayMiliseconds = "0";
+  } else {
+    displayMiliseconds = miliseconds.toString();
+    displayMilisecondsSliced = displayMiliseconds.slice(0, 1);
   }
 
   if(seconds < 10) {
@@ -47,7 +62,9 @@ function stopWatch() {
   }
 
   //display updated time values
-  document.getElementById("display").innerHTML = displayHours + ':' + displayMinutes + ":" + displaySeconds;
+  document.getElementById("display").innerHTML = displayHours + ':' + displayMinutes + ":" + displaySeconds + "." + displayMilisecondsSliced;
+
+
 }
 
 
@@ -55,7 +72,7 @@ function stopWatch() {
 function startStop () {
 
   if (status === 'stopped') {
-    interval = window.setInterval(stopWatch, 1000);
+    interval = window.setInterval(stopWatch, 10);
     document.getElementById('startStop').innerHTML = "Stop";
     status = "started";
   } else {
@@ -69,10 +86,20 @@ function startStop () {
 //function to reset the stopwatch
 function reset() {
   window.clearInterval(interval);
+  miliseconds = 0;
   seconds = 0;
   minutes = 0;
   hours = 0;
-  document.getElementById("display").innerHTML = "00:00:00";
+  document.getElementById("display").innerHTML = "00:00:00.0";
   document.getElementById("startStop").innerHTML = "Start";
 }
+
+function lap () {
+
+  var lapArray = [];
+
+
+
+}
+
 
