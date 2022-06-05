@@ -32,9 +32,15 @@ h1, h2 {
   margin: 20x auto;
 }
 
-.buttons{
+button {
   text-align: center;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  width: 100px;
+  height: 45px;
+  font-size: 1em;
+  padding: 10px;
   border-radius: inherit;
-
-
+  margin: 9px;
 }
