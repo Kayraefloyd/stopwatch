@@ -44,3 +44,8 @@ button {
   border-radius: inherit;
   margin: 9px;
 }
+
+#lapRecord{
+  color: white;
+  font-size: 1em;
+}

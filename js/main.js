@@ -1,19 +1,23 @@
 // define vars for time values
-var miliseconds = 0;
-var seconds = 0;
-var minutes = 0;
-var hours = 0;
+let miliseconds = 0;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
 
-var displayMiliseconds = 0;
-var displaySeconds = 0;
-var displayMinutes= 0;
-var displayHours = 0;
+let displayMiliseconds = 0;
+let displaySeconds = 0;
+let displayMinutes= 0;
+let displayHours = 0;
+
+// const lapBtn = document.getElementById('lapBtn');
+// const lapRecord = document.getElementById('lapRecord');
+
 
 // create var for setInterval function
-var interval = null;
+let interval = null;
 
 // create var for stopwatch status
-var status = 'stopped';
+let status = 'stopped';
 
 
 //Stopwatch function
@@ -60,14 +64,9 @@ function stopWatch() {
   } else {
     displayHours = hours;
   }
-
   //display updated time values
   document.getElementById("display").innerHTML = displayHours + ':' + displayMinutes + ":" + displaySeconds + "." + displayMilisecondsSliced;
-
-
 }
-
-
 
 function startStop () {
 
@@ -80,7 +79,6 @@ function startStop () {
     document.getElementById("startStop").innerHTML = "Start";
     status = 'stopped';
   }
-
 }
 
 //function to reset the stopwatch
@@ -92,14 +90,17 @@ function reset() {
   hours = 0;
   document.getElementById("display").innerHTML = "00:00:00.0";
   document.getElementById("startStop").innerHTML = "Start";
+  document.getElementById("lapRecord").innerHTML = "";
 }
 
 function lap () {
-
-  var lapArray = [];
-
-
-
+  currentLap = `<div class="lap">${hours} : ${minutes} : ${seconds} . ${miliseconds} </div>`;
+  lapRecord.innerHTML += currentLap;
 }
+
+// lapBtn.addEventListener('click', lap);
+// startBtn.addEventListener('click', startStop);
+// resetBtn.addEventListener('click', reset);
+
 
 
